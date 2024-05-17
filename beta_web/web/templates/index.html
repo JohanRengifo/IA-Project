@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot IA</title>
+</head>
+<body>
+    <h1>Chatbot IA</h1>
+    <div id="chat-container">
+        <div id="chat-history"></div>
+        <input type="text" id="user-input" name="message" placeholder="Escribe un mensaje..." />
+        <button id="send-button">Enviar</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const chatHistory = document.getElementById('chat-history');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-button');
+
+            function showMessage(sender, message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.textContent = `${sender}: ${message}`;
+                chatHistory.appendChild(messageDiv);
+            }
+
+            function sendMessage() {
+                const userMessage = userInput.value;
+                showMessage('Tú', userMessage);
+
+                // Realiza una solicitud POST al servidor Flask para obtener la respuesta del chatbot
+                fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: userMessage })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const botResponse = data.bot_response;
+                    showMessage('Chatbot', botResponse);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+                userInput.value = '';
+            }
+
+            sendButton.addEventListener('click', sendMessage);
+            userInput.addEventListener('keyup', function (event) {
+                if (event.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

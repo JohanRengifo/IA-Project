@@ -1,0 +1,108 @@
+{
+    "intents": [
+        {
+            "tag": "saludo",
+            "patterns": [
+                "hola",
+                "qué tal",
+                "cómo estás"
+            ],
+            "responses": [
+                "¡Hola! ¿En qué puedo ayudarte?",
+                "Buenos días. ¿En qué puedo asistirte hoy?",
+                "¡Hola! Estoy aquí para ayudarte. ¿En qué puedo hacerlo?"
+            ]
+        },
+        {
+            "tag": "despedida",
+            "patterns": [
+                "adiós",
+                "hasta luego",
+                "chao"
+            ],
+            "responses": [
+                "¡Adiós! Si necesitas ayuda en el futuro, no dudes en regresar.",
+                "Hasta luego. Que tengas un buen día.",
+                "Nos vemos pronto. ¡Cuídate!"
+            ]
+        },
+        {
+            "tag": "agradecimiento",
+            "patterns": [
+                "gracias",
+                "te agradezco",
+                "muchas gracias"
+            ],
+            "responses": [
+                "De nada. Estoy aquí para ayudar.",
+                "No hay problema. Siempre es un placer ayudar.",
+                "¡Por nada! Si tienes más preguntas, no dudes en preguntar."
+            ]
+        },
+        {
+            "tag": "fecha",
+            "patterns": [
+                "¿Qué día es hoy?",
+                "Dime la fecha actual",
+                "¿Cuál es la fecha de hoy?"
+            ],
+            "responses": [
+                "Hoy es [fecha].",
+                "La fecha actual es [fecha].",
+                "Es [fecha] hoy."
+            ]
+        },
+        {
+            "tag": "hora",
+            "patterns": [
+                "¿Qué hora es?",
+                "Dime la hora actual",
+                "¿Cuál es la hora de ahora?"
+            ],
+            "responses": [
+                "Son las [hora].",
+                "La hora actual es [hora].",
+                "Es [hora] en este momento."
+            ]
+        },
+        {
+            "tag": "informacion_general",
+            "patterns": [
+                "Cuéntame más sobre ti",
+                "¿Quién eres?",
+                "¿Qué puedes hacer?"
+            ],
+            "responses": [
+                "Soy un asistente de IA diseñado para responder preguntas y ayudarte.",
+                "Me llamo [nombre], un chatbot que puede proporcionar información y asistencia.",
+                "Estoy aquí para ayudarte con cualquier pregunta que tengas."
+            ]
+        },
+        {
+            "tag": "preguntas_complejas",
+            "patterns": [
+                "Explícame la teoría de la relatividad de Einstein",
+                "¿Cómo funciona la energía nuclear?",
+                "¿Puedes explicar la inteligencia artificial?"
+            ],
+            "responses": [
+                "¡Claro! La teoría de la relatividad de Einstein...",
+                "La energía nuclear se genera a partir del proceso de...",
+                "La inteligencia artificial es un campo de la informática..."
+            ]
+        },
+        {
+            "tag": "preguntas_sencillas",
+            "patterns": [
+                "¿Cuál es la capital de Francia?",
+                "¿Cuántos planetas hay en el sistema solar?",
+                "¿Cuál es el símbolo químico del oxígeno?"
+            ],
+            "responses": [
+                "La capital de Francia es París.",
+                "Hay [número] planetas en el sistema solar.",
+                "El símbolo químico del oxígeno es O."
+            ]
+        }
+    ]
+}
